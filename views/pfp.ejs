@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Profile Picture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            animation: changeBackground 10s infinite;
+        }
+
+        @keyframes changeBackground {
+            0% { background-image: url('https://source.unsplash.com/featured/?dark,cool'); }
+            50% { background-image: url('https://source.unsplash.com/featured/?dark,awesome'); }
+            100% { background-image: url('https://source.unsplash.com/featured/?dark,rad'); }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 100%;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        button[type="submit"] {
+            background-color: #2962FF;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #448AFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Change Profile Picture</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="profilePicture">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
